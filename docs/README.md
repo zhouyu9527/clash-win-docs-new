@@ -14,5 +14,5 @@
 ::: tip
 如无特殊说明，缩写**CFW**指代 Clash for Windows
 
-此文档由 Gitbook 生成并托管于[Github](https://github.com/Fndroid/clash-win-docs-new)，由于个人精力有限，欢迎一起参与完善
+此文档由 [VuePress](https://vuepress.vuejs.org/) 生成并托管于[Github](https://github.com/Fndroid/clash-win-docs-new)，由于个人精力有限，欢迎一起参与完善
 :::
