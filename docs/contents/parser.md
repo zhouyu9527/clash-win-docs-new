@@ -153,6 +153,7 @@ raw 是一个字符串，一般需要用 yaml 库解析成 JavaScript 对象
 - yaml：yaml 框架，[GitHub](https://github.com/eemeli/yaml)
 - notify：发出系统通知方法，签名为`function notify(title:string, message:string, silent:bool)`
 - console：日志输出至文件，方便调试，在 Settings 界面中 Parser 设置下方打开
+- homeDir：Home Directory 目录
 
 :::tip
 除了以上工具类，在使用`.js`文件时，也可以通过`npm`引入第三方模块
