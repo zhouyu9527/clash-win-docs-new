@@ -15,7 +15,7 @@ dns:
   enable: true
   enhanced-mode: redir-host
   nameserver:
-    - 1.1.1.1 # 真实请求DNS，可多设置几个
+    - 114.114.114.114 # 真实请求DNS，可多设置几个
 # interface-name: WLAN # 出口网卡名称，或者使用下方的自动检测
 tun:
   enable: true
@@ -25,6 +25,26 @@ tun:
   macOS-auto-route: true
   macOS-auto-detect-interface: true # 自动检测出口网卡
 ```
+
+### 注意事项
+
+当`enhanced-mode`设置为`fake-ip`时，会出现系统检测到网卡无法联网，微软系 APP 无法登陆使用等问题，可以通过添加`fake-ip-filter`解决：
+
+```yaml
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - 114.114.114.114
+  fake-ip-filter:
+    - "dns.msftncsi.com"
+    - "www.msftncsi.com"
+    - "www.msftconnecttest.com"
+```
+
+::: tip
+TUN 模式更推荐使用 redir-host 模式
+:::
 
 ## macOS
 
@@ -38,7 +58,7 @@ dns:
   enable: true
   enhanced-mode: redir-host
   nameserver:
-    - 1.1.1.1 # 真实请求DNS，可多设置几个
+    - 114.114.114.114 # 真实请求DNS，可多设置几个
 # interface-name: en0 # 出口网卡名称，或者使用下方的自动检测
 tun:
   enable: true
