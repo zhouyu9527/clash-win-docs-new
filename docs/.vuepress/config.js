@@ -74,7 +74,7 @@ module.exports = {
           "/contents/font",
           "/contents/proxyorder",
           "/contents/header",
-          "/contents/mac",
+          "/contents/questions",
         ],
       },
     ],

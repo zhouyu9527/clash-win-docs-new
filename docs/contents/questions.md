@@ -1,25 +1,35 @@
 # 常见问题
 
-**1. 界面显示不全，无法操作**
+<question-answer question="macOS 版本启动要求授权">
 
-删除 Home Directory 下 config.yaml 文件并重启软件
-如错误依旧，打开 logs 文件夹，选取最新日志文件分析
+在第一次或更新 APP 后打开软件会提示用户授权，这是因为需要安装/更新用于设置系统代理的工具，如果不进行授权，General 中的 System Proxy 开关将无法打开。一般情况下，除非工具更新，否则除了第一次启动外不会重复需要授权。
 
-**2. 升级后提示 xxx not found**
+</question-answer>
 
-0.6.0 版本升级后，Clash 核心增加对规则部分的校验，如果策略不存在，则不再忽略而提示错误，根据错误信息检查配置文件并进行排除即可
+<question-answer question="macOS DMG 安装后无法打开，提示损坏">
 
-**3. 系统代理自动关闭或打开**
+网络下载应用被 Apple 添加隔离标识，终端输入命令解除即可：
 
-清除系统代理设置
-如无法解决，则检查是否有其他安全/代理软件修改代理设置
+```
+sudo xattr -r -d com.apple.quarantine /Applications/Clash\ for\ Windows.app
+```
 
-**4. 无法访问网页**
+</question-answer>
 
-0.6.0 版本升级后，Clash 核心使用自定义 DNS 设置进行服务器及直连域名的解析，所以当日志中出现大量 All DNS Failed! 日志时，请重新设置合适的 DNS
+<question-answer question="系统代理自动关闭或打开">
 
-如果不使用 TAP ，建议将 DNS 关闭
+[参考](https://github.com/Fndroid/clash_for_windows_pkg/issues/312)
 
-**5. TAP 无法安装**
+</question-answer>
 
-检查是否已经安装其他 TAP 设备，若是，可以先在设备管理器中将其删除后重试
+<question-answer question="General 端口显示为 0">
+
+[参考](https://github.com/Fndroid/clash_for_windows_pkg/issues/671)
+
+</question-answer>
+
+<question-answer question="Killer 系列网卡无法开启 TAP/TUN 模式">
+
+[参考](https://github.com/Fndroid/clash_for_windows_pkg/issues/1243#issuecomment-751165537)
+
+</question-answer>
