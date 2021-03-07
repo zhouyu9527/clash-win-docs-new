@@ -53,7 +53,7 @@ commands 是一组简单的命令，作为上面操作的补充
 ```yaml
 commands:
   - dns.enable=false # 命令1
-  - proxy-groups.0.proxies.0+DIRECT # 命令2
+  - proxy-groups.0.proxies.2+DIRECT # 命令2
 ```
 
 每个命令可以被分为三个部分，分别是：**定位+操作+设定值**
