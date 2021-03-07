@@ -15,7 +15,8 @@ dns:
   enable: true
   enhanced-mode: redir-host
   nameserver:
-    - 114.114.114.114 # 真实请求DNS，可多设置几个
+    - 8.8.8.8 # 真实请求DNS，可多设置几个
+    - 114.114.114.114
 # interface-name: WLAN # 出口网卡名称，或者使用下方的自动检测
 tun:
   enable: true
