@@ -1,7 +1,7 @@
 <template>
   <div class="lazy-img">
     <div v-show="isDefault" class="card pending">
-      <div>loading...</div>
+      <div>Clash for Windows</div>
     </div>
     <img
       v-show="isLoaded"
@@ -67,11 +67,11 @@ export default {
 }
 
 .pending {
-  color: gray;
+  color: rgb(170, 170, 170);
 }
 
 .failed {
-  color: rgba(223, 22, 22, 0.719);
+  color: rgba(196, 38, 38, 0.719);
 }
 
 .img {
