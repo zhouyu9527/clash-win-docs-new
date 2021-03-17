@@ -1,9 +1,9 @@
 <template>
   <div class="list">
-    <template v-for="(ad, index) in ads">
+    <div v-for="(ad, index) in ads" :key="ad.url">
       <lazy-img :src="ad.img" class="item" @click="handleAdClick(ad)" />
       <div v-if="index < ads.length - 1" class="saperator"></div>
-    </template>
+    </div>
   </div>
 </template>
 
