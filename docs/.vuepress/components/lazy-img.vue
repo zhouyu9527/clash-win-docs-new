@@ -76,5 +76,7 @@ export default {
 
 .img {
   cursor: pointer;
+  width: 690px;
+  height: 150px;
 }
 </style>

@@ -31,6 +31,10 @@ export default {
           url: "http://cylink.wtf",
           img: "http://to.kache.moe/ad/clash_690_150.jpeg",
         },
+        {
+          url: "https://faster.goodfrog.net/wlS",
+          img: "https://i.loli.net/2021/03/24/G15Fj3dLTcqDM74.jpg",
+        },
       ],
     };
   },
