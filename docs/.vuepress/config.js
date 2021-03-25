@@ -68,6 +68,7 @@ module.exports = {
           "/contents/tap",
           "/contents/mixin",
           "/contents/parser",
+          "/contents/lightweight",
           "/contents/profilespath",
           "/contents/childprocess",
           "/contents/trayicon",
