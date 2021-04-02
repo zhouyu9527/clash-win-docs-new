@@ -33,3 +33,21 @@ sudo xattr -r -d com.apple.quarantine /Applications/Clash\ for\ Windows.app
 [参考](https://github.com/Fndroid/clash_for_windows_pkg/issues/1243#issuecomment-751165537)
 
 </question-answer>
+
+<question-answer question="Service Mode 无法安装（Windows）">
+
+先确定系统安装了`.NET framework runtime`
+
+然后尝试手动安装：
+
+1. 点击 General 中的 Home Directory 打开文件夹，进入 service 子目录中
+2. 打开 CMD，执行以下命令：
+
+```
+service.exe install
+service.exe start
+```
+
+如安装出现错误，参考[这个 issue](https://github.com/Fndroid/clash_for_windows_pkg/issues/1627)
+
+</question-answer>
