@@ -74,6 +74,21 @@ tun:
 dns-hijack 不可以劫持局域网地址的 DNS，如 192.168.0.0/16，请务必手动设置系统 DNS
 :::
 
+::: tip
+若要将此 Mac 设置为代理网关，打开 IP 转发即可：
+
+```
+sudo sysctl -w net.inet.ip.forwarding=1
+```
+
+这种做法将在机器下次重启后失效，如果想要永久保存，编辑文件`/etc/sysctl.conf`，配置下面变量：
+
+```
+net.inet.ip.forwarding=1
+```
+
+:::
+
 ## 配置文件参考
 
 [Clash Wiki](https://github.com/Dreamacro/clash/wiki/Premium-Core-Features)
