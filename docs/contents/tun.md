@@ -67,7 +67,7 @@ tun:
   dns-hijack: # DNS劫持设置为系统DNS
     - 114.114.114.114 # 可任意设置，但为了保证CFW关闭后能不影响联网，建议设置真实能访问的DNS服务器
   macOS-auto-route: true
-  macOS-auto-detect-interface: false # 自动检测出口网卡
+  macOS-auto-detect-interface: true # 自动检测出口网卡
 ```
 
 ::: tip
