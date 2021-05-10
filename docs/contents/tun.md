@@ -109,8 +109,8 @@ sudo sysctl -w net.inet.ip.forwarding=1
 </dict>
 </plist>
 ```
-2. 将文件添加进 `\Library\LaunchDaemons`
-3. ` sudo launchctl load /System/Library/LaunchDaemons/network.forwarding.plist`
+2. 将文件添加进 `/Library/LaunchDaemons`
+3. ` sudo launchctl load /Library/LaunchDaemons/network.forwarding.plist`
 
 :::
 
