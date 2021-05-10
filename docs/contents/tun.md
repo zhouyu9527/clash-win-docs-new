@@ -81,11 +81,36 @@ dns-hijack 不可以劫持局域网地址的 DNS，如 192.168.0.0/16，请务�
 sudo sysctl -w net.inet.ip.forwarding=1
 ```
 
-这种做法将在机器下次重启后失效，如果想要永久保存，编辑文件`/etc/sysctl.conf`，配置下面变量：
+这种做法将在机器下次重启后失效，如果想要永久保存，~~编辑文件`/etc/sysctl.conf`，配置下面变量~~由于 macOS Catalina / Big Sur 已经弃用 sysctl，改用 LaunchDaemon 进行配置：
 
+1. 新建 `network.forwarding.plist`
 ```
-net.inet.ip.forwarding=1
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>Network Forwarding</string>
+    <key>UserName</key>
+    <string>root</string>
+    <key>GroupName</key>
+    <string>wheel</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/sbin/sysctl</string>
+        <string>-w</string>
+        <string>net.inet.ip.forwarding=1</string>
+        <string>net.inet6.ip6.forwarding=1</string>
+    </array>
+    <key>KeepAlive</key>
+    <false/>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
 ```
+2. 将文件添加进 `\Library\LaunchDaemons`
+3. ` sudo launchctl load /System/Library/LaunchDaemons/network.forwarding.plist`
 
 :::
 
