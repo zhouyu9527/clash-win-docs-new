@@ -81,7 +81,13 @@ dns-hijack 不可以劫持局域网地址的 DNS，如 192.168.0.0/16，请务�
 sudo sysctl -w net.inet.ip.forwarding=1
 ```
 
-这种做法将在机器下次重启后失效，如果想要永久保存，~~编辑文件`/etc/sysctl.conf`，配置下面变量~~由于 macOS Catalina / Big Sur 已经弃用 sysctl，改用 LaunchDaemons 进行配置：
+这种做法将在机器下次重启后失效，如果想要永久保存，~~编辑文件`/etc/sysctl.conf`，配置下面变量：
+```
+net.inet.ip.forwarding=1
+net.inet6.ip6.forwarding=1
+```
+
+或者使用 LaunchDaemons 进行配置：
 1. 新建 `network.forwarding.plist`
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
