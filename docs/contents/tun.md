@@ -81,7 +81,7 @@ dns-hijack 不可以劫持局域网地址的 DNS，如 192.168.0.0/16，请务�
 sudo sysctl -w net.inet.ip.forwarding=1
 ```
 
-这种做法将在机器下次重启后失效，如果想要永久保存，~~编辑文件`/etc/sysctl.conf`，配置下面变量：
+这种做法将在机器下次重启后失效，如果想要永久保存，编辑文件`/etc/sysctl.conf`，配置下面变量：
 ```
 net.inet.ip.forwarding=1
 net.inet6.ip6.forwarding=1
