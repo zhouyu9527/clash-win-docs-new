@@ -20,12 +20,16 @@ dns:
 # interface-name: WLAN # 出口网卡名称，或者使用下方的自动检测
 tun:
   enable: true
-  stack: gvisor
+  stack: gvisor # 使用 system 需要 Clash Premium 2021.05.08 及更高版本
   dns-hijack:
     - 198.18.0.2:53
-  macOS-auto-route: true
-  macOS-auto-detect-interface: true # 自动检测出口网卡
+  auto-route: true
+  auto-detect-interface: true # 自动检测出口网卡
 ```
+
+::: notice
+从`Clash Premium 2021.05.08`开始，使用`auto-*`代替`macOS-auto-*`，往后数个版本将暂时兼容旧字段名。此版本同时添加了`system stack`支持。[Reference](https://github.com/Dreamacro/clash/releases/tag/premium)
+:::
 
 ### 注意事项
 
@@ -66,9 +70,13 @@ tun:
   stack: system # 或 gvisor
   dns-hijack: # DNS劫持设置为系统DNS
     - 114.114.114.114 # 可任意设置，但为了保证CFW关闭后能不影响联网，建议设置真实能访问的DNS服务器
-  macOS-auto-route: true
-  macOS-auto-detect-interface: true # 自动检测出口网卡
+  auto-route: true
+  auto-detect-interface: true # 自动检测出口网卡
 ```
+
+::: notice
+从`Clash Premium 2021.05.08`开始，使用`auto-*`代替`macOS-auto-*`，往后数个版本将暂时兼容旧字段名。[Reference](https://github.com/Dreamacro/clash/releases/tag/premium)
+:::
 
 ::: tip
 dns-hijack 不可以劫持局域网地址的 DNS，如 192.168.0.0/16，请务必手动设置系统 DNS
