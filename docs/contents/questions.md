@@ -52,7 +52,6 @@ service.exe start
 
 </question-answer>
 
-
 <question-answer question="在Windows系统中，使用system作为TUN stack时，Clash网卡无法正常工作">
 
 当前版本下，使用`system`作为TUN stack时，需要在系统防火墙中将Clash Core放行。[参考](https://github.com/Fndroid/clash_for_windows_pkg/issues/1936#issuecomment-853226838)
