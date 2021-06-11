@@ -27,7 +27,7 @@ tun:
   auto-detect-interface: true # 自动检测出口网卡
 ```
 
-::: notice
+::: tip NOTICE
 从`Clash Premium 2021.05.08`开始，使用`auto-*`代替`macOS-auto-*`，往后数个版本将暂时兼容旧字段名。此版本同时添加了`system stack`支持。[Reference](https://github.com/Dreamacro/clash/releases/tag/premium)
 :::
 
@@ -74,7 +74,7 @@ tun:
   auto-detect-interface: true # 自动检测出口网卡
 ```
 
-::: notice
+::: tip NOTICE
 从`Clash Premium 2021.05.08`开始，使用`auto-*`代替`macOS-auto-*`，往后数个版本将暂时兼容旧字段名。[Reference](https://github.com/Dreamacro/clash/releases/tag/premium)
 :::
 
