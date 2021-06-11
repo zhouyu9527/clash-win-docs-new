@@ -51,3 +51,9 @@ service.exe start
 如安装出现错误，参考[这个 issue](https://github.com/Fndroid/clash_for_windows_pkg/issues/1627)
 
 </question-answer>
+
+<question-answer question="在 Windows 系统中，使用 system 作为 TUN stack 时，Clash 网卡无法正常工作">
+
+当前版本下，使用`system`作为 TUN stack 时，需要在系统防火墙中将 Clash core 放行。[参考](https://github.com/Fndroid/clash_for_windows_pkg/issues/1936#issuecomment-853226838)
+
+</question-answer>
