@@ -28,7 +28,7 @@ tun:
 ```
 
 ::: tip NOTICE
-从`Clash Premium 2021.05.08`开始，使用`auto-*`代替`macOS-auto-*`，往后数个版本将暂时兼容旧字段名。此版本同时添加了`system stack`支持。[Reference](https://github.com/Dreamacro/clash/releases/tag/premium)
+从`Clash Premium 2021.05.08`开始，使用`auto-*`代替`macOS-auto-*`，往后数个版本将暂时兼容旧字段名。此版本同时添加了`system stack`支持。[参考](https://github.com/Dreamacro/clash/releases/tag/premium)
 :::
 
 ### 注意事项
@@ -75,7 +75,7 @@ tun:
 ```
 
 ::: tip NOTICE
-从`Clash Premium 2021.05.08`开始，使用`auto-*`代替`macOS-auto-*`，往后数个版本将暂时兼容旧字段名。[Reference](https://github.com/Dreamacro/clash/releases/tag/premium)
+从`Clash Premium 2021.05.08`开始，使用`auto-*`代替`macOS-auto-*`，往后数个版本将暂时兼容旧字段名。[参考](https://github.com/Dreamacro/clash/releases/tag/premium)
 :::
 
 ::: tip
