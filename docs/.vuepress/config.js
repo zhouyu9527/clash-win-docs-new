@@ -69,6 +69,7 @@ module.exports = {
           "/contents/mixin",
           "/contents/parser",
           "/contents/lightweight",
+          "/contents/dhcp",
           "/contents/tray",
           "/contents/profilespath",
           "/contents/childprocess",
