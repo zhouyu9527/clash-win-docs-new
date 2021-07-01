@@ -35,6 +35,10 @@ export default {
           url: "http://cylink.wtf",
           img: "http://to.kache.moe/ad/clash_690_150.jpeg",
         },
+        {
+          url: "http://china-cdn-net.com/CFW",
+          img: "https://ikuai349.obs.cn-south-1.myhuaweicloud.com/ChinaG.png",
+        },
       ],
     };
   },
