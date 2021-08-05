@@ -13,7 +13,7 @@
 3. 点击 YAML 右边 Edit 小字打开编辑界面
 4. 在修改编辑界面内容为：
    ```yaml
-   mixin:
+   mixin: # 注意下面缩进
      dns:
        enable: true
        listen: :53
