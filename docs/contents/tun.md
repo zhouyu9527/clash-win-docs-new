@@ -22,7 +22,7 @@ tun:
   enable: true
   stack: gvisor # 使用 system 需要 Clash Premium 2021.05.08 及更高版本
   dns-hijack:
-    - 198.18.0.2:53
+    - 198.18.0.2:53 # 请勿更改
   auto-route: true
   auto-detect-interface: true # 自动检测出口网卡
 ```
@@ -90,13 +90,16 @@ sudo sysctl -w net.inet.ip.forwarding=1
 ```
 
 这种做法将在机器下次重启后失效，如果想要永久保存，编辑文件`/etc/sysctl.conf`，配置下面变量：
+
 ```
 net.inet.ip.forwarding=1
 net.inet6.ip6.forwarding=1
 ```
 
 或者使用 LaunchDaemons 进行配置：
+
 1. 新建 `network.forwarding.plist`
+
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -122,8 +125,37 @@ net.inet6.ip6.forwarding=1
 </dict>
 </plist>
 ```
+
 2. 将文件添加进 `/Library/LaunchDaemons`
 3. `sudo launchctl load /Library/LaunchDaemons/network.forwarding.plist`
+   :::
+
+## Linux
+
+启动 TUN 模式需要进行如下操作：
+
+1. 点击`General`中`Service Mode`右边`Manage`，在打开窗口中安装服务模式，安装完成应用会自动重启（某些系统需要手动重启 APP），Service Mode 右边地球图标变为`绿色`即安装成功
+2. 在使用的配置文件中加入如下内容：
+
+```yaml
+dns:
+  enable: true
+  enhanced-mode: redir-host
+  nameserver:
+    - 114.114.114.114 # 真实请求DNS，可多设置几个
+tun:
+  enable: true
+  stack: system # 或 gvisor
+  dns-hijack: # DNS劫持设置为系统DNS
+    - 1.0.0.1:53 # 请勿更改
+```
+
+::: tip
+Linux 下一般不需要设置`interface-name`字段
+:::
+
+::: tip
+Service Mode 安装脚本使用 [Kr328/clash-premium-installer](https://github.com/Kr328/clash-premium-installer)
 :::
 
 ## 配置文件参考
